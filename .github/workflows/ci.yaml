@@ -4,14 +4,14 @@ on:
   #
   # Runs tests against the microservice on push to the main branch of this code repository.
   #
-  push: 
-    branches:
-      - main
+  # push: 
+  #   branches:
+  #     - main
 
   #
   # Allows deployment to be invoked manually through the GitHub Actions user interface.
   #
-  workflow_dispatch: 
+  # workflow_dispatch: 
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -31,6 +31,6 @@ jobs:
       with:
         node-version: 18.x
         cache: 'npm'
-
+    - run: npm install
     - run: npm ci
     - run: npm test
